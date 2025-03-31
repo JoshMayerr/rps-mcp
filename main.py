@@ -1,5 +1,14 @@
+import os
 import random
+import dotenv
 from mcp.server.fastmcp import FastMCP
+
+dotenv.load_dotenv()
+
+RPS_API_KEY = os.getenv("rpsApiKey")
+
+if not RPS_API_KEY:
+    raise ValueError("rpsApiKey is not set")
 
 mcp = FastMCP("Rock Paper Scissors")
 

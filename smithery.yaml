@@ -4,7 +4,13 @@ startCommand:
   type: stdio
   configSchema:
     # JSON Schema defining the configuration options for the MCP.
-    {}
+    type: object
+    properties:
+      rpsApiKey:
+        type: string
+        description: The API key for the Rock Paper Scissors MCP
+    required:
+      - rpsApiKey
   commandFunction:
     # A JS function that produces the CLI command based on the given config to start the MCP on stdio.
     |-
